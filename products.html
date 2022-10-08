@@ -1,0 +1,3018 @@
+<html>
+
+<head>
+  <title>Astro Liquor House Product Page</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+
+
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script type='text/javascript' src="js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="js/jquery.mycart.js"></script>
+  
+
+  <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="font.css">
+  
+  <style>
+  .badge-notify{
+    background:red;
+    position:relative;
+    top: -20px;
+    right: 10px;
+  }
+  .my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+  }
+  </style>
+
+
+
+
+  <script type="text/javascript">
+  $(function () {
+
+    var goToCartIcon = function($addTocartBtn){
+      var $cartIcon = $(".my-cart-icon");
+      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+      $addTocartBtn.prepend($image);
+      var position = $cartIcon.position();
+      $image.animate({
+        top: position.top,
+        left: position.left
+      }, 500 , "linear", function() {
+        $image.remove();
+      });
+    }
+
+    $('.my-cart-btn').myCart({
+      currencySymbol: 'Kyats',
+      classCartIcon: 'my-cart-icon',
+      classCartBadge: 'my-cart-badge',
+      classProductQuantity: 'my-product-quantity',
+      classProductRemove: 'my-product-remove',
+      classCheckoutCart: 'my-cart-checkout',
+      affixCartIcon: true,
+      showCheckoutModal: true,
+      numberOfDecimals: 2,
+      cartItems: [
+        // {id: 1, name: 'product 1', summary: 'summary 1', price: 10, quantity: 1, image: 'images/img_1.png'},
+        // {id: 2, name: 'product 2', summary: 'summary 2', price: 20, quantity: 2, image: 'images/img_2.png'},
+        // {id: 3, name: 'product 3', summary: 'summary 3', price: 30, quantity: 1, image: 'images/img_3.png'}
+      ],
+      clickOnAddToCart: function($addTocart){
+        goToCartIcon($addTocart);
+      },
+      afterAddOnCart: function(products, totalPrice, totalQuantity) {
+        console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+      },
+      clickOnCartIcon: function($cartIcon, products, totalPrice, totalQuantity) {
+        console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+      },
+      checkoutCart: function(products, totalPrice, totalQuantity) {
+        var checkoutString=("\nSuccessfully Complete\n");
+        checkoutString += "Total Price: " + totalPrice + "\nTotal Quantity: " + totalQuantity;
+        checkoutString += "\n\n id \t name \t summary \t price \t quantity \t image path";
+        $.each(products, function(){
+          checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.summary + " \t " + this.price + " \t " + this.quantity + " \t " + this.image);
+
+        });
+
+
+        alert(checkoutString)
+        console.log("checking out", products, totalPrice, totalQuantity);
+      },
+      getDiscountPrice: function(products, totalPrice, totalQuantity) {
+        console.log("calculating discount", products, totalPrice, totalQuantity);
+        return totalPrice * 0.5;
+      }
+    });
+
+ 
+  });
+
+
+  // for jqery//
+
+ 
+
+
+
+
+  </script>
+
+
+  <script type="text/javascript">
+      
+
+
+
+       $(document).ready(function(){
+      $("#all").show();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").hide();
+
+      
+      $(".all1").click(function(){
+        $("#all").show();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+     $(".beer1").click(function(){
+        $("#all").hide();
+      $("#beer").show();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+     $(".Liqueur1").click(function(){
+        $("#all").hide();
+      $("#beer").hide();
+      $("#Liqueur").show();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+     $(".ram1").click(function(){
+        $("#all").hide();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").show();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+     $(".tequila1").click(function(){
+        $("#all").hide();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").show();
+      $("#vodka").hide();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+
+ $(".vodka1").click(function(){
+        $("#all").hide();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").show();
+      $("#whisky").hide();
+      
+      
+      });
+
+
+
+ $(".whisky1").click(function(){
+        $("#all").hide();
+      $("#beer").hide();
+      $("#Liqueur").hide();
+      $("#ram").hide();      
+      $("#tequila").hide();
+      $("#vodka").hide();
+      $("#whisky").show();
+      
+      
+      });
+
+
+
+
+    });
+
+
+   
+
+
+
+
+
+  </script>
+
+
+
+
+</head>
+
+
+
+
+
+<body class="container-fluid">
+
+
+
+  <!-- <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li> -->
+
+
+
+
+<div class="backg">
+
+  
+
+
+  <img src="image/logo2.png" class="img-fluid" style="width: 100px; height: 71px"><span class="logo_title"> &nbsp;&nbsp;&nbsp;Astro Liquor House</span>
+
+
+
+
+<!-- Single button -->
+
+<div class="btn-group right">
+    <button type="button" class="btn" style="background: black;"><a href="home.html">Home</a></button>
+    <button type="button" class="btn active" style="background: black;"><a href="products.html">Drinks</a></button>
+    <button type="button" class="btn" style="background: black;"><a href="about.html">About</a></button>
+    <button type="button" class="btn" style="background: black;"><a href="contact.html">Contact</a></button>
+    <button type="button" class="btn" style="background: black;"><a href="blog.html">Blog</a></button>
+
+  </div>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="page-header cartt">
+    <h1>
+      <div>
+        <span class="glyphicon glyphicon-shopping-cart my-cart-icon cartt"><span class="badge badge-notify my-cart-badge"></span></span>
+      </div>
+    </h1>
+  </div>
+
+  
+<div class="product">
+
+<section class="home" id="home" style="background-image:url(image/b4.jpg)"></section>
+  <!-- for option button all items  -->
+
+
+
+  <div class="btn-group bar">
+    <button type="button" class="btn btn-primary all1" data-toggle="dropdown">All Items</button>
+    <button type="button" class="btn btn-primary beer1">Beer</button>
+    <button type="button" class="btn btn-primary Liqueur1">Liqueur</button>
+    <button type="button" class="btn btn-primary ram1">Rum</button>
+    <button type="button" class="btn btn-primary tequila1">Tequila</button>
+    <button type="button" class="btn btn-primary vodka1">Vodka</button>
+    <button type="button" class="btn btn-primary whisky1">Whisky</button>
+
+  </div>
+  </div>
+
+  <div id="all">
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      
+      <br>
+      <br>
+      <img src="images/product/beer/abc_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      ABC Beer- <strong>1800 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="1" data-name="ABC Beer" data-summary="summary 1" data-price="1800" data-quantity="1" data-image="images/product/beer/abc_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#cardone">Details</button>
+    </div>
+
+    
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/heineken.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Heineken Beer- <strong>2100 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="2" data-name="Heineken Beer" data-summary="summary 2" data-price="2100" data-quantity="1" data-image="images/product/beer/heineken.jpeg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#cardtwo">Details</button>
+    </div>
+
+     
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/myanmar_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Myanmar Beer- <strong>1700 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="3" data-name="Myanmar Beer" data-summary="summary 3" data-price="1700" data-quantity="1" data-image="images/product/beer/myanmar_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card3">Details</button>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/tiger_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Tiger Beer- <strong>1700 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="4" data-name="Tiger Beer" data-summary="summary 4" data-price="1700" data-quantity="1" data-image="images/product/beer/tiger_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card4">Details</button>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/liqueur/baileys_almande.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Almande- <strong>66000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="5" data-name="Baileys Almande" data-summary="summary 5" data-price="66000" data-quantity="1" data-image="images/product/liqueur/baileys_almande.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card5">Details</button>
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/baileys-coffee-liqueur.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Coffee- <strong>52500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="6" data-name="Baileys Coffee" data-summary="summary 6" data-price="52500" data-quantity="1" data-image="images/product/liqueur/baileys-coffee-liqueur.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card6">Details</button>
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/baileys_irish_cream.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Irich Cream- <strong>64500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="7" data-name="Baileys Irich Cream" data-summary="summary 7" data-price="64500" data-quantity="1" data-image="images/product/liqueur/baileys_irish_cream.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card7">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/jagermeister.png" width="150px" height="150px">
+      <br>
+      <br>
+      Jagermeister- <strong>69000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="8" data-name="Jagermeister" data-summary="summary 8" data-price="69000" data-quantity="1" data-image="images/product/liqueur/jagermeister.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card8">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+   <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/liqueur/jagermeister-coolpack.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Jagermeister Coolpack- <strong>20600 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="9" data-name="Jagermeister Coolpack" data-summary="summary 9" data-price="20600" data-quantity="1" data-image="images/product/liqueur/jagermeister-coolpack.jpeg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card9">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+  
+
+   
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/bacardi_ginger.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Ginger- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="10" data-name="Bacardi Ginger" data-summary="summary 10" data-price="57000" data-quantity="1" data-image="images/product/rum/bacardi_ginger.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card10">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_black.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Black- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="11" data-name="Bacardi Black" data-summary="summary 11" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_black.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card11">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_gold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Gold- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="12" data-name="Bacardi Gold" data-summary="summary 12" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_gold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card12">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_limon.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Limon- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="13" data-name="Bacardi Limon" data-summary="summary 13" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_limon.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card13">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_spiced.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Spice- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="14" data-name="Bacardi Spice" data-summary="summary 14" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_spiced.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card14">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_dark.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan Dark- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="15" data-name="Captain Morgan Dark" data-summary="summary 15" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_dark.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card15">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_gold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan Gold- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="16" data-name="Captain Morgan Gold" data-summary="summary 16" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_gold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card16">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_white.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan White- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="17" data-name="Captain Morgan White" data-summary="summary 17" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_white.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card17">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <!-- The end of Rum -->
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_bocas.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Bocas- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="18" data-name="Josecuervo Bocas" data-summary="summary 18" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_bocas.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card18">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_gold.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Gold- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="19" data-name="Josecuervo Gold" data-summary="summary 19" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_gold.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card19">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_silver.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Silver- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="20" data-name="Josecuervo Silver" data-summary="summary 20" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_silver.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card20">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_tradicional.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Tradicon- <strong>60000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="21" data-name="Josecuervo Tradicon" data-summary="summary 21" data-price="60000" data-quantity="1" data-image="images/product/Tequila/josecuervo_tradicional.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card21">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_anejo.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Anejo- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="22" data-name="Patron Anejo" data-summary="summary 22" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_anejo.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card22">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_coffee.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Coffee- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="23" data-name="Patron Coffee" data-summary="summary 23" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_coffee.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card623">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_reposado.png" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Reposado- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="24" data-name="Patron Reposado" data-summary="summary 24" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_reposado.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card24">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron-silver.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Silver- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="25" data-name="Patron Silver" data-summary="summary 25" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron-silver.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card25">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+<!-- The end of Teuila -->
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_100.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut 100- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="26" data-name="Absolut 100" data-summary="summary 26" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_100.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card26">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_apple.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Apple- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="27" data-name="Absolut Apple" data-summary="summary 27" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_apple.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card27">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_cherry.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Cherry- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="28" data-name="Absolut Cherry" data-summary="summary 28" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_cherry.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card28">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_vanalia.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Vanailia- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="29" data-name="Absolut Vanailia" data-summary="summary 29" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_vanalia.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card29">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+ <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_vodka.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Vodka- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="30" data-name="Absolut Vodka" data-summary="summary 30" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_vodka.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card30">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/smirnoff-no-21-vodka.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Vodka- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="31" data-name="Smirnoff Vodka" data-summary="summary 31" data-price="46000" data-quantity="1" data-image="images/product/vodka/smirnoff-no-21-vodka.jpeg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card31">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/smirnoff_raspberry.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Raspberry- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="32" data-name="Smirnoff Raspberry" data-summary="summary 32" data-price="46000" data-quantity="1" data-image="images/product/vodka/smirnoff_raspberry.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card32">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/Smirnoff Red White & Berry.png" width="100px" height="150px">
+      <br>
+      <br>
+      Smirnoff Red & White Berry- <strong>50000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="33" data-name="Smirnoff Red & White Berry" data-summary="summary 33" data-price="50000" data-quantity="1" data-image="images/product/vodka/Smirnoff Red White & Berry.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card33">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/Smirnoff_Vodka_proof.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Vodka Proof- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="34" data-name="Smirnoff Vodka Proof" data-summary="summary 34" data-price="46000" data-quantity="1" data-image="images/product/vodka/Smirnoff_Vodka_proof.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card34">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+<!-- The end of vodka -->
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/whisky/ballatines_12yearsold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Ballatines- <strong>22500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="35" data-name="Ballatines" data-summary="summary 35" data-price="22500" data-quantity="1" data-image="images/product/whisky/ballatines_12yearsold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card35">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    
+
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/whisky/ballatines_barrel_smooth.jpg" width="80px" height="150px">
+      <br>
+      <br>
+      Ballatines Barrel Smooth- <strong>21000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="36" data-name="Ballatines Barrel Smooth" data-summary="summary 36" data-price="21000" data-quantity="1" data-image="images/product/whisky/ballatines_barrel_smooth.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card36">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+  </div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+     
+<!-- for opton  button -->
+
+</div>
+
+
+
+
+<!-- for beer -->
+<div id="beer">
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/abc_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      ABC Beer- <strong>1800 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="1" data-name="ABC Beer" data-summary="summary 1" data-price="1800" data-quantity="1" data-image="images/product/beer/abc_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#cardone">Details</button>
+    </div>
+
+    
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/heineken.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Heineken Beer- <strong>2100 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="2" data-name="Heineken Beer" data-summary="summary 2" data-price="2100" data-quantity="1" data-image="images/product/beer/heineken.jpeg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#cardtwo">Details</button>
+    </div>
+
+     
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/myanmar_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Myanmar Beer- <strong>1700 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="3" data-name="Myanmar Beer" data-summary="summary 3" data-price="1700" data-quantity="1" data-image="images/product/beer/myanmar_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card3">Details</button>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/beer/tiger_beer.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Tiger Beer- <strong>1700 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="4" data-name="Tiger Beer" data-summary="summary 4" data-price="1700" data-quantity="1" data-image="images/product/beer/tiger_beer.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card4">Details</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ <!--for liqueur  -->
+
+
+
+
+<div id="Liqueur">
+  <div class="row">
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+      <br>
+      <br>
+      <img src="images/product/liqueur/baileys_almande.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Almande- <strong>66000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="5" data-name="Baileys Almande" data-summary="summary 5" data-price="66000" data-quantity="1" data-image="images/product/liqueur/baileys_almande.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card5">Details</button>
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/baileys-coffee-liqueur.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Coffee- <strong>52500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="6" data-name="Baileys Coffee" data-summary="summary 6" data-price="52500" data-quantity="1" data-image="images/product/liqueur/baileys-coffee-liqueur.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card6">Details</button>
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/baileys_irish_cream.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Baileys Irich Cream- <strong>64500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="7" data-name="Baileys Irich Cream" data-summary="summary 7" data-price="64500" data-quantity="1" data-image="images/product/liqueur/baileys_irish_cream.jpg">Add to Cart</button>
+      <button class="btn btn-light" data-toggle="modal" data-target="#card7">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+        <br>
+      <br>
+      <img src="images/product/liqueur/jagermeister.png" width="150px" height="150px">
+      <br>
+      <br>
+      Jagermeister- <strong>69000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="8" data-name="Jagermeister" data-summary="summary 8" data-price="69000" data-quantity="1" data-image="images/product/liqueur/jagermeister.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card8">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+   <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/liqueur/jagermeister-coolpack.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Jagermeister Coolpack- <strong>20600 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="9" data-name="Jagermeister Coolpack" data-summary="summary 9" data-price="20600" data-quantity="1" data-image="images/product/liqueur/jagermeister-coolpack.jpeg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card9">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- for ram -->
+  <div id="ram">
+    <div class="row">
+
+
+  <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/bacardi_ginger.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Ginger- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="10" data-name="Bacardi Ginger" data-summary="summary 10" data-price="57000" data-quantity="1" data-image="images/rum/bacardi_ginger.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card10">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_black.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Black- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="11" data-name="Bacardi Black" data-summary="summary 11" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_black.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card11">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_gold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Gold- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="12" data-name="Bacardi Gold" data-summary="summary 12" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_gold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card12">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_limon.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Limon- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="13" data-name="Bacardi Limon" data-summary="summary 13" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_limon.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card13">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/barcardi_spiced.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Bacardi Spice- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="14" data-name="Bacardi Spice" data-summary="summary 14" data-price="57000" data-quantity="1" data-image="images/product/rum/barcardi_spiced.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card14">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+       <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_dark.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan Dark- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="15" data-name="Captain Morgan Dark" data-summary="summary 15" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_dark.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card15">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_gold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan Gold- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="16" data-name="Captain Morgan Gold" data-summary="summary 16" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_gold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card16">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/rum/captain_morgan_white.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Captain Morgan White- <strong>57000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="17" data-name="Captain Morgan White" data-summary="summary 17" data-price="57000" data-quantity="1" data-image="images/product/rum/captain_morgan_white.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card17">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- for Tequila -->
+
+<div id="tequila">
+  <div class="row">
+
+
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_bocas.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Bocas- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="18" data-name="Josecuervo Bocas" data-summary="summary 18" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_bocas.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card18">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_gold.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Gold- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="19" data-name="Josecuervo Gold" data-summary="summary 19" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_gold.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card19">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_silver.png" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Silver- <strong>61500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="20" data-name="Josecuervo Silver" data-summary="summary 20" data-price="61500" data-quantity="1" data-image="images/product/Tequila/josecuervo_silver.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card20">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/josecuervo_tradicional.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Josecuervo Tradicon- <strong>60000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="21" data-name="Josecuervo Tradicon" data-summary="summary 21" data-price="60000" data-quantity="1" data-image="images/product/Tequila/josecuervo_tradicional.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card21">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_anejo.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Anejo- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="22" data-name="Patron Anejo" data-summary="summary 22" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_anejo.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card22">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_coffee.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Coffee- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="23" data-name="Patron Coffee" data-summary="summary 23" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_coffee.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card623">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron_reposado.png" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Reposado- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="24" data-name="Patron Reposado" data-summary="summary 24" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron_reposado.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card24">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/Tequila/patron-silver.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Patron Silver- <strong>65000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="25" data-name="Patron Silver" data-summary="summary 25" data-price="65000" data-quantity="1" data-image="images/product/Tequila/patron-silver.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card25">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- for voldika -->
+<div id="vodka">
+  <div class="row">
+
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_100.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut 100- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="26" data-name="Absolut 100" data-summary="summary 26" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_100.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card26">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_apple.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Apple- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="27" data-name="Absolut Apple" data-summary="summary 27" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_apple.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card27">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_cherry.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Cherry- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="28" data-name="Absolut Cherry" data-summary="summary 28" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_cherry.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card28">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_vanalia.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Vanailia- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="29" data-name="Absolut Vanailia" data-summary="summary 29" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_vanalia.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card29">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+ <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/absolut_vodka.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Absolut Vodka- <strong>49500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="30" data-name="Absolut Vodka" data-summary="summary 30" data-price="49500" data-quantity="1" data-image="images/product/vodka/absolut_vodka.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card30">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+<div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/smirnoff-no-21-vodka.jpeg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Vodka- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="31" data-name="Smirnoff Vodka" data-summary="summary 31" data-price="46000" data-quantity="1" data-image="images/product/vodka/smirnoff-no-21-vodka.jpeg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card31">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/smirnoff_raspberry.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Raspberry- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="32" data-name="Smirnoff Raspberry" data-summary="summary 32" data-price="46000" data-quantity="1" data-image="images/product/vodka/smirnoff_raspberry.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card32">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/Smirnoff Red White & Berry.png" width="100px" height="150px">
+      <br>
+      <br>
+      Smirnoff Red & White Berry- <strong>50000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="33" data-name="Smirnoff Red & White Berry" data-summary="summary 33" data-price="50000" data-quantity="1" data-image="images/product/vodka/Smirnoff Red White & Berry.png">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card33">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/vodka/Smirnoff_Vodka_proof.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Smirnoff Vodka Proof- <strong>46000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="34" data-name="Smirnoff Vodka Proof" data-summary="summary 34" data-price="46000" data-quantity="1" data-image="images/product/vodka/Smirnoff_Vodka_proof.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card34">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- for whisky -->
+    <div id="whisky">
+      <div class="row">
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/whisky/ballatines_12yearsold.jpg" width="150px" height="150px">
+      <br>
+      <br>
+      Ballatines- <strong>22500 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="35" data-name="Ballatines" data-summary="summary 35" data-price="22500" data-quantity="1" data-image="images/product/whisky/ballatines_12yearsold.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card35">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+
+
+
+    
+
+
+
+     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+    <br>
+      <br>
+      <img src="images/product/whisky/ballatines_barrel_smooth.jpg" width="80px" height="150px">
+      <br>
+      <br>
+      Ballatines Barrel Smooth- <strong>21000 Kyats</strong>
+      <br>
+      <br>
+      <button class="btn btn-primary my-cart-btn" data-id="36" data-name="Ballatines Barrel Smooth" data-summary="summary 36" data-price="21000" data-quantity="1" data-image="images/product/whisky/ballatines_barrel_smooth.jpg">Add to Cart</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#card36">Details</button>
+      <!-- <a href="#" class="btn btn-info">Details</a> -->
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- for Details Card -->
+
+
+<!-- <div class="container"> -->
+  <div class="modal fade" id="cardone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ABC Beer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/beer/abc_beer.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>ABC Beer</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="cardtwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Heineken Beer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/beer/heineken.jpeg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>Heineken Beer</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Myanmar Beer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/beer/myanmar_beer.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>Myanmar Beer</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tiger Beer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/beer/tiger_beer.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>Tiger Beer</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Baileys Almande</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/liqueur/baileys_almande.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>Baileys Almande</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+Baileys Coffee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/liqueur/baileys-coffee-liqueur.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Baileys Coffee</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="card7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+Baileys Irich Cream</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/liqueur/baileys_irish_cream.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Baileys Irich Cream</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="card8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+Jagermeister</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/liqueur/jagermeister.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Jagermeister</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="card9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Jagermeister Coolpack</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/liqueur/jagermeister-coolpack.jpeg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Jagermeister Coolpack</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Bacardi Ginger</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/bacardi_ginger.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Bacardi Ginger</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Bacardi Black</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/barcardi_black.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Bacardi Black</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Bacardi Gold</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/barcardi_gold.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Bacardi Gold</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="card13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Bacardi Limon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/barcardi_limon.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Bacardi Limon</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="card14" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Bacardi Spice</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/barcardi_spiced.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Bacardi Spice</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card15" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Captain Morgan Dark</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/captain_morgan_dark.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Captain Morgan Dark</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Captain Morgan Gold</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="mages/product/rum/captain_morgan_gold.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Captain Morgan Gold</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="card17" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Captain Morgan White</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/rum/captain_morgan_white.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Captain Morgan White</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="card18" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Josecuervo Bocas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/josecuervo_bocas.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Josecuervo Bocas</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="card19" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Josecuervo Gold-</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/josecuervo_gold.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Josecuervo Gold-</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card20" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Josecuervo Silver</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/josecuervo_silver.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Josecuervo Silver</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card21" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Josecuervo Tradicon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/josecuervo_tradicional.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Josecuervo Tradicon</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card22" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Patron Anejo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/patron_anejo.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Patron Anejo</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card23" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Patron Coffee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/patron_coffee.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Patron Coffee</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="card24" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Patron Reposado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/patron_reposado.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Patron Reposado</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card25" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Patron Silver</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/Tequila/patron-silver.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Patron Silver</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card26" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Absolut 100</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/absolut_100.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Absolut 100</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card27" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Absolut Apple</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/absolut_apple.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Absolut Apple</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="card28" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Absolut Cherry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="iimages/product/vodka/absolut_cherry.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Absolut Cherry</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card29" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Absolut Vanailia-</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/absolut_vanalia.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Absolut Vanailia-</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card30" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Absolut Vodka</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/absolut_vodka.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Absolut Vodka</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card31" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Smirnoff Vodka</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/smirnoff-no-21-vodka.jpeg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Smirnoff Vodka</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card32" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Smirnoff Raspberry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/smirnoff_raspberry.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Smirnoff Raspberry</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card33" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Smirnoff Red & White Berry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/Smirnoff Red White & Berry.png" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Smirnoff Red & White Berry</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="card34" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Smirnoff Vodka Proof</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/vodka/Smirnoff_Vodka_proof.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Smirnoff Vodka Proof</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card35" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Ballatines</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/whisky/ballatines_12yearsold.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Ballatines</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="card36" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+
+Ballatines Barrel Smooth</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 text-center" >
+              <img src="images/product/whisky/ballatines_barrel_smooth.jpg" class="img-fluid" width="100" height="100">
+            </div>
+
+            <div class="col-8">
+            <h1>
+Ballatines Barrel Smooth</h1>
+            <p>
+Established in 1931, ABC Extra Stout has been awarded over 20 brewing medals internationally. It was most recently honoured with the Best Stout in Asia award at the Asia Beer Awards 2010 and a bronze medal at the 2009 World Beer Championships. Locally brewed and bottled, ABC Extra Stout is Singapore’s Original Stout of German heritage, that is produced according to stringent international quality standards. Its distinct malty and aromatic flavour also boasts a bittersweet after-taste.
+          </p>
+          </div>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br><br>
+</body>
+
+</html>

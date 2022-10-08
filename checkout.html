@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Out</title>
+
+
+	<style type="text/css">
+		 #order{
+			padding-left: 150px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			getcount();
+			getdata();
+
+			function getdata()
+		{
+			var shoeString = localStorage.getItem("products");
+			if(shoeString)
+			{
+				var shoeArray=JSON.parse(shoeString);
+				var html='';
+				var sum=0;
+				var j=1;
+				$.each(shoeArray,function(i,v){
+					var name=v.name;
+					var summary=v.summary;
+					var price=v.price;
+					var quantity=v.quantity;
+					//var qty=v.qty;
+					
+					var subtotal=Number(price)*Number(quantity);
+					sum+=subtotal;
+					html+=`<tr><td>${j++}</td><td>${name}</td><td><button class="sub" data-id="${i}" data-name="${v.name}" data-price="${v.price}" data-quantity="${v.quantity}">-</button> ${price} <button class="add" data-id="${i}" data-name="${v.name}" data-price="${v.price}" data-quantity="${v.quantity}">+</button> </td><td>${quantity}</td><td>${subtotal}</td></tr>`;
+
+				})
+				html+=`<tr><td colspan='4'>Total</td><td>${sum}</td></tr>`;
+				html+=`<tr><td colspan='5'><div id="order"><button class="btn_order">Order</button></div></td></tr>`;
+				$("#shoelist").html(html);
+			}
+		} 
+			function getcount(){
+				var shoe=localStorage.getItem("products");
+				var countqty=0;
+				if(shoe)
+				{
+					var shoeArray=JSON.parse(shoe);
+					
+					$.each(shoeArray,function(i,v){
+						var quantity=v.quantity;
+						countqty+=parseInt(quantity);
+						$("#count").text("("+countqty+")");
+					})
+				}
+				
+			}
+
+				$("#shoelist").on('click','.sub',function(){
+					var id=$(this).data('id');
+					var quantity=$(this).data('quantity');
+					var name=$(this).data('name');
+					var price=$(this).data('price');
+
+					
+					var shoe=localStorage.getItem("products");
+
+					if(shoe){
+						quantity=quantity-1;
+
+						if(quantity<0)
+						{
+							quantity=0;
+						}
+						//alert(qty);
+						var shoeArray=JSON.parse(shoe);
+					    shoeArray[id].quantity=quantity;
+					    //shoeArray[id].id=id;
+					    shoeArray[id].name=name;
+					    shoeArray[id].price=price;
+
+						var shoeData=JSON.stringify(shoeArray);
+					    localStorage.setItem("products",shoeData);
+					    
+					    getdata();
+					    getcount();
+
+					} 
+					
+				})
+				$("#shoelist").on('click','.add',function(){
+					var id=$(this).data('id');
+					var quantity=$(this).data('quantity');
+					var name=$(this).data('name');
+					var price=$(this).data('price');
+
+					
+					var shoe=localStorage.getItem("products");
+
+					if(shoe){
+						quantity=quantity+1;
+
+						if(quantity<0)
+						{
+							quantity=0;
+						}
+						//alert(qty);
+						var shoeArray=JSON.parse(shoe);
+					    shoeArray[id].quantity=quantity;
+					    //shoeArray[id].id=id;
+					    shoeArray[id].name=name;
+					    shoeArray[id].price=price;
+
+						var shoeData=JSON.stringify(shoeArray);
+					    localStorage.setItem("products",shoeData);
+					    
+					    getdata();
+					    getcount();
+
+					} 
+					
+				})
+				$("#shoelist").on('click','.btn_order',function(){
+					var flag=confirm("Are you sure to order?");
+					if(flag == true)
+					{
+						$('#tbcheckout tbody').empty();
+						$('#count').empty();
+					}
+
+					
+				})
+
+				
+		})
+	</script>
+</head>
+<body>
+	<h2><a href="index.html">Shop</a> | 
+		<a href="checkout.html">Checkout <span id="count"></span></a></h2>
+		<h3>Checkout</h3>
+		<table border="1" cellspacing="0" cellpadding="15" id="tbcheckout">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Qty</th>
+					<th>Subtotal</th>
+				</tr>
+				<tbody id="shoelist">
+				
+				</tbody>
+			</thead>
+		</table>
+		<footer>
+			<div class="col-lg-12 text-center">
+				<br><br>
+				<p>Developed By|<a href="https://mtabdevelopment.github.io/" target="_blank"> Mihretab Nigatu</a></p><br>
+				<a href="https://mtabdevelopment.github.io/" target="_blank"> <img src="image/logo.jpg" width="45"
+						height="45"></a><br><br>
+				<span class="social">
+					<a href="https://t.me/MTAB_dev_t"><img src="image/telegram.png" width="35" height="35"></a>
+					<a href="https://github.com/Mih-Nig-Afe"><img src="image/github.png" width="35" height="35"></a>
+				</span>
+				<br><br><br>
+				<div>
+				</div>
+			</div>
+		</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
